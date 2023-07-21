@@ -21,8 +21,8 @@
 /* #region Start Sticky Footer */
 
 .mainLogo {
-    height: 2em;
-    margin-left: -1em;
+    height: 3em;
+    margin-left: -1rem;
 }
 
 html,
@@ -33,12 +33,19 @@ body {
     display: flex;
     flex-direction: column;
     background-color: var(--jg-theme-150);
+    
 }
 main {
     flex-grow: 1;
+    padding-bottom: 5rem;
 }
 footer {
     flex-shrink: 0;
+}
+
+.footerLogoText {
+    font-size: 1.3rem;
+    font-family:'Tomorrow', sans-serif ;
 }
 /* #endregion  Sticky footer */
 .btn-primary {
