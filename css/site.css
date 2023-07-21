@@ -11,76 +11,73 @@
     --jg-theme-800: hsl(20, 50%, 21%);
     --jg-theme-850: hsl(20, 50%, 16%);
     --jg-theme-900: hsl(20, 50%, 11%);
-
     --jg-dark-color: #212121;
     --jg-light-color: #deeefb;
 }
 
 
+/* font-family: 'Tomorrow', sans-serif; */
+
 /* #region Start Sticky Footer */
+
+.mainLogo {
+    height: 2em;
+    margin-left: -1em;
+}
 
 html,
 body {
     height: 100%;
 }
-
 body {
     display: flex;
     flex-direction: column;
     background-color: var(--jg-theme-150);
 }
-
 main {
     flex-grow: 1;
 }
-
 footer {
     flex-shrink: 0;
 }
-
 /* #endregion  Sticky footer */
-
 .btn-primary {
     --bs-btn-bg: var(--jg-theme-600);
     --bs-btn-border-color:var(--jg-theme-600);
     --bs-btn-hover-bg : var(--jg-theme-700);
     --bs-btn-hover-border-color : var(--jg-theme700);
-
 }
-
 .navbar,
 .footer {
     background-color: var(--jg-theme-900);
-
 }
-
 .footer {
     color: var(--jg-theme-200);
 }
-
 .socialIcons {
     font-size: 2rem;
     padding-left: .5rem;
     color: var(--jg-theme-400);
     transition: color 0.2s;
-
+    text-decoration: none;
 }
 
 
 .socialIcons:hover {
     color:var(--jg-theme-core);
 }
-
 .app-logo {
     max-width: 400px;
 }
-
 .checkList i {
     color: var(--jg-theme-core);
     padding-right: .5rem;
 }
-
 .devIcons {
     font-size: 4rem;
     padding-left: .5rem;
+}
+
+.even {
+    font-weight: bold;
 }

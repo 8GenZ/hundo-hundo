@@ -1,14 +1,87 @@
-function displayMessage() {
-    let inputbox = document.getElementById('message');
+// Get the numbers from our form inputs
+// ENTRY POINT
+// CONTROLLER Function
+function getValues() {
+    let startNumber = document.getElementById('startValue').value;
+    let endNumber = document.getElementById('endValue').value;
 
-    let message = inputbox.value;
+    startNumber = Number(startNumber);
+    endNumber = Number(endNumber);
+
+// make sure there are numbers
+    if (isNaN(startNumber) == true || isNaN(endNumber)==true) {
+
+        Swal.fire({
+            title: 'Oops!',
+            text: 'Hundo only works with numbers.',
+            icon: 'error',
+            backdrop: 'false'
+        });
+// make sure the end is greater than the start
+    } else if (startNumber > endNumber) {
+        Swal.fire({
+            title: 'Oops!',
+            text: 'The starting number is less than the ending number',
+            icon: 'error',
+            backdrop: false
+        });
+    } else {
+        let numberArray = generateNumbers(startNumber, endNumber);
+
+        displayNumbers(numberArray);
+    }
 
 
-    Swal.fire(
-        {
-            backdrop: false,
-            title: 'App Name',
-            text: message
+
+
+
+
+}
+
+
+// Buisness logic - creates number in the input range
+// Data Model
+function generateNumbers(start, end) {
+
+    let range = [];
+
+    for (let number = start; number <= end; number = number + 1) {
+
+
+        range.push(number)
+
+    }
+
+    return range;
+
+}
+
+
+// View Function
+//Puts the numbers on the page 
+function displayNumbers(numbersToDisplay) {
+
+    let tableHtml = '';
+
+    for (let index = 0; index < numbersToDisplay.length; index = index + 1) {
+
+        let currentNumber = numbersToDisplay[index];
+
+        let className = '';
+
+        if (currentNumber % 2 == 0) {
+            className = 'even';
+        } else {
+            className = 'odd';
         }
-    )
+
+
+        let tableRowHtml = `<tr><td class="${className}">${currentNumber}</td></tr>`;
+
+        tableHtml = tableHtml + tableRowHtml;
+
+    }
+
+    document.getElementById('results').innerHTML = tableHtml;
+
 }
